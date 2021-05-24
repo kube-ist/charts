@@ -1,0 +1,88 @@
+########
+# Meta #
+########
+nameOverride: ""
+fullnameOverride: ""
+
+############
+# Operator #
+############
+# -- Should the operator watch all namespaces or just the namespace its installed in
+singleNamespace: false
+
+#######
+# CRD #
+#######
+# -- Should we install CRD's
+installCRDs: true
+
+##############
+# Deployment #
+##############
+# -- How many instances of the operator
+replicaCount: 1
+# -- Annotations for the operator
+podAnnotations: {}
+# -- Image Pull Secrets for the operator
+imagePullSecrets: []
+# -- The operators Node/Pod Affinity
+affinity: {}
+# -- The operators tolerations
+tolerations: []
+# -- The operators node selector
+nodeSelector: {}
+# -- The operators priority
+priorityClassName: ""
+# -- The operators pod security context
+podSecurityContext: {}
+# fsGroup: 2000
+# -- The operators resources
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+#   memory: 128Mi
+image:
+  # -- The operators image repository
+  repository: quay.io/keycloak/keycloak-operator
+  # -- The operators image pull policy
+  pullPolicy: IfNotPresent
+  # -- Overrides the image tag whose default is the chart version.
+  tag: "13.0.0"
+# -- The operators security context
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+# runAsUser: 1000
+
+##########
+# Policy #
+##########
+serviceAccount:
+  # -- Specifies whether a service account should be created
+  create: true
+  # -- Annotations to add to the service account
+  annotations: {}
+  # -- The name of the service account to use.
+  name: ""
+  rbac:
+    # -- Should rbac rules be created
+    create: true
+
+#########################
+# Pod Disruption Budget #
+#########################
+pdb:
+  # -- Should we create a pdb
+  create: false
+  minAvailable: 1
+  maxUnavailable: 1

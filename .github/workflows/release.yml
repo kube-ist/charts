@@ -1,0 +1,44 @@
+name: Release Chart
+
+on:
+  push:
+    branches:
+      - 'release/*/*'
+
+jobs:
+  release:
+    name: 'Release'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
+      - name: Install Helm
+        uses: azure/setup-helm@v1
+        with:
+          version: v3.4.0
+
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
+      - name: Package Helm
+        run: |
+          PACKAGE_NAME="$(echo "${{ steps.extract_branch.outputs.branch }}" | cut -d/ -f 2)"
+          helm package "./charts/${PACKAGE_NAME}/"
+
+      - name: Run chart-releaser
+        uses: helm/chart-releaser-action@v1.2.1
+        env:
+          CR_TOKEN: "${{ secrets.TOKEN }}"
+          CR_PACKAGE_PATH: ""
