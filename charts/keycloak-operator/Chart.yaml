@@ -1,7 +1,7 @@
 apiVersion: v2
 name: keycloak-operator
 description: |
-  A Helm chart for Keycloak.
+  A Helm chart for the [Keycloak Operator](https://github.com/keycloak/keycloak-operator).
 
   Based on the offical Kustomize install configuration (https://github.com/keycloak/keycloak-operator/tree/master/deploy).
 
