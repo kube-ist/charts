@@ -17,4 +17,4 @@ spec:
   selector:
     matchLabels:
       {{- include "keycloak-operator.labels" . | nindent 6 }}
-  {{- end -}}
+  {{- end -}} 
