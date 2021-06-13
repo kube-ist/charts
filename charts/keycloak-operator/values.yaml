@@ -9,6 +9,7 @@ fullnameOverride: ""
 ############
 # -- Should the operator watch all namespaces or just the namespace its installed in
 singleNamespace: false
+namespace: ""
 
 #######
 # CRD #

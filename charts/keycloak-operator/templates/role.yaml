@@ -3,7 +3,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: {{ include "keycloak-operator.fullname" . }}
-  namespace: {{ .Release.Namespace }}
+  namespace: {{ .Values.namespace | default .Release.Namespace  | quote }}
   labels:
     { { - include "keycloak-operator.labels" . | nindent 4 } }
 rules:
@@ -143,7 +143,7 @@ kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: {{ include "keycloak-operator.fullname" . }}
-  namespace: {{ .Release.Namespace }}
+  namespace: {{ .Values.namespace | default .Release.Namespace  | quote }}
   labels:
     {{- include "keycloak-operator.labels" . | nindent 4 }}
 subjects:

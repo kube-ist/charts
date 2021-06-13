@@ -1,6 +1,6 @@
 # keycloak-operator
 
-![Version: 0.1.7](https://img.shields.io/badge/Version-0.1.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 13.0.0](https://img.shields.io/badge/AppVersion-13.0.0-informational?style=flat-square)
+![Version: 0.1.9](https://img.shields.io/badge/Version-0.1.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 13.0.0](https://img.shields.io/badge/AppVersion-13.0.0-informational?style=flat-square)
 
 A Helm chart for the [Keycloak Operator](https://github.com/keycloak/keycloak-operator).
 
@@ -23,6 +23,7 @@ Released with [chart-releaser](https://github.com/helm/chart-releaser).
 | nameOverride | string | `""` |  |
 | fullnameOverride | string | `""` |  |
 | singleNamespace | bool | `false` |  |
+| namespace | string | `""` |  |
 | installCRDs | bool | `true` |  |
 | replicaCount | int | `1` |  |
 | podAnnotations | object | `{}` | Annotations for the operator |
@@ -35,7 +36,7 @@ Released with [chart-releaser](https://github.com/helm/chart-releaser).
 | resources | object | `{}` |  |
 | image.repository | string | `"quay.io/keycloak/keycloak-operator"` | The operators image repository |
 | image.pullPolicy | string | `"IfNotPresent"` | The operators image pull policy |
-| image.tag | string | `"13.0.0"` | Overrides the image tag whose default is the chart version. |
+| image.tag | string | `"13.0.1"` | Overrides the image tag whose default is the chart version. |
 | securityContext | object | `{}` | The operators security context |
 | serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |

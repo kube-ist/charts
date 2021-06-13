@@ -151,5 +151,5 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: {{ include "keycloak-operator.fullname" . }}
-    namespace: {{ .Release.Namespace }}
+    namespace: {{ .Values.namespace | default .Release.Namespace  | quote }}
 {{- end }}
