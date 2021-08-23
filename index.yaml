@@ -3,6 +3,21 @@ entries:
   keycloak-operator:
   - apiVersion: v2
     appVersion: 15.0.2
+    created: "2021-08-23T14:49:27.094567458Z"
+    description: 'A Helm chart for the [Keycloak Operator](https://github.com/keycloak/keycloak-operator).  Based
+      on the offical Kustomize install configuration (https://github.com/keycloak/keycloak-operator/tree/master/deploy).  ```shell
+      $ helm repo add kubeist https://charts.kube.ist $ helm search repo kubeist $
+      helm install my-release kubeist/keycloak-operator ```  Documentation generated
+      by [helm-docs](https://github.com/norwoodj/helm-docs): `helm-docs --sort-values-order
+      file`.  Released with [chart-releaser](https://github.com/helm/chart-releaser). '
+    digest: beb73eb1cc3c682bc21a27d2c8fc16df6f80c82ea2e875cab19bb15dfa104695
+    name: keycloak-operator
+    type: application
+    urls:
+    - https://github.com/kube-ist/charts/releases/download/keycloak-operator-0.3.2/keycloak-operator-0.3.2.tgz
+    version: 0.3.2
+  - apiVersion: v2
+    appVersion: 15.0.2
     created: "2021-08-23T14:22:45.872071929Z"
     description: 'A Helm chart for the [Keycloak Operator](https://github.com/keycloak/keycloak-operator).  Based
       on the offical Kustomize install configuration (https://github.com/keycloak/keycloak-operator/tree/master/deploy).  ```shell
@@ -149,4 +164,4 @@ entries:
     urls:
     - https://github.com/kube-ist/charts/releases/download/keycloak-operator-0.1.0/keycloak-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2021-08-23T14:22:45.87211583Z"
+generated: "2021-08-23T14:49:27.09461746Z"
