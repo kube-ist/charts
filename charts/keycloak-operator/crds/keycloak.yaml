@@ -33,6 +33,12 @@ spec:
             spec:
               description: KeycloakSpec defines the desired state of Keycloak.
               properties:
+                DisableDefaultServiceMonitor:
+                  description: Disables the integration with Application Monitoring
+                    Operator. When set to true, the operator doesn't create default
+                    PrometheusRule, ServiceMonitor and GrafanaDashboard objects and
+                    users will have to create them manually, if needed.
+                  type: boolean
                 extensions:
                   description: A list of extensions, where each one is a URL to a JAR
                     files that will be deployed in Keycloak.
@@ -98,7 +104,8 @@ spec:
                   properties:
                     enabled:
                       description: If set to true, the Operator will use an external
-                        database. pointing to Keycloak.
+                        database pointing to Keycloak. The embedded database (externalDatabase.enabled
+                        = false) is deprecated.
                       type: boolean
                   type: object
                 instances:
@@ -946,6 +953,11 @@ spec:
                                 type: object
                               type: array
                           type: object
+                      type: object
+                    podlabels:
+                      additionalProperties:
+                        type: string
+                      description: List of labels to set in the keycloak pods
                       type: object
                     resources:
                       description: Resources (Requests and Limits) for the Pods.
