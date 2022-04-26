@@ -179,4 +179,26 @@ entries:
     urls:
     - https://github.com/kube-ist/charts/releases/download/keycloak-operator-0.1.0/keycloak-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-12T21:57:51.866184325Z"
+  pgadmin4:
+  - apiVersion: v1
+    appVersion: "6.7"
+    created: "2022-04-26T20:39:44.777068097Z"
+    description: pgAdmin4 is a web based administration tool for PostgreSQL database
+    digest: f353bdd81e747a55cad3d4d1f2937c1c0d50266fa7c02ef95566f8686759667b
+    home: https://www.pgadmin.org/
+    icon: https://wiki.postgresql.org/images/3/30/PostgreSQL_logo.3colors.120x120.png
+    keywords:
+    - pgadmin
+    - postgres
+    - database
+    - sql
+    maintainers:
+    - email: rowanruseler@gmail.com
+      name: rowanruseler
+    name: pgadmin4
+    sources:
+    - https://github.com/rowanruseler/helm-charts
+    urls:
+    - https://github.com/kube-ist/charts/releases/download/pgadmin4-1.9.10/pgadmin4-1.9.10.tgz
+    version: 1.9.10
+generated: "2022-04-26T20:39:44.777105598Z"
