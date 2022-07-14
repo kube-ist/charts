@@ -117,10 +117,12 @@ rules:
       - watch
   - apiGroups:
       - keycloak.org
+      - k8s.keycloak.org
     resources:
       - keycloaks
       - keycloaks/status
       - keycloaks/finalizers
+      - keycloakrealmimports
       - keycloakrealms
       - keycloakrealms/status
       - keycloakrealms/finalizers
