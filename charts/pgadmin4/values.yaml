@@ -160,11 +160,11 @@ env:
   ## Add custom environment variables that will be injected to deployment
   ## Ref: https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html
   ##
-  variables:
-   - name: PGADMIN_LISTEN_ADDRESS
-     value: "0.0.0.0"
-   - name: PGADMIN_LISTEN_PORT
-     value: "8080"
+  variables: []
+#   - name: PGADMIN_LISTEN_ADDRESS
+#     value: "0.0.0.0"
+#   - name: PGADMIN_LISTEN_PORT
+#     value: "8080"
 
 persistentVolume:
   ## If true, pgAdmin4 will create/use a Persistent Volume Claim

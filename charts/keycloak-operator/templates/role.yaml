@@ -39,6 +39,7 @@ rules:
       - create
       - update
       - watch
+      - delete
   - apiGroups:
       - batch
     resources:
@@ -67,6 +68,7 @@ rules:
       - update
       - watch
   - apiGroups:
+      - networking.k8s.io
       - extensions
     resources:
       - ingresses
@@ -117,6 +119,7 @@ rules:
       - watch
   - apiGroups:
       - keycloak.org
+      - k8s.keycloak.org
     resources:
       - keycloaks
       - keycloaks/status
