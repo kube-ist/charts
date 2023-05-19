@@ -55,7 +55,7 @@ image:
   # -- The operators image pull policy
   pullPolicy: IfNotPresent
   # -- Overrides the image tag whose default is the chart version.
-  tag: "18.0.2-legacy"
+  tag: "19.0.3-legacy"
 # -- The operators security context
 securityContext: {}
   # capabilities:
